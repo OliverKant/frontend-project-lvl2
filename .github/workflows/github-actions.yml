@@ -17,10 +17,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make install
         env:
           CI: true
-      - run: make lint
+      - name: npm install
+        run: |
+            make install
+      - run: |
+            make lint
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
