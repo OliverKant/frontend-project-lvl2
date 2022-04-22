@@ -6,10 +6,7 @@ const sign = {
 };
 
 const compare = (file1, file2) => {
-  const keys1 = Object.keys(file1);
-  const keys2 = Object.keys(file2);
-
-  const equalKeys = _.union(keys1, keys2);
+  const equalKeys = _.union(_.keys(file1), _.keys(file2));
   const sortedKeys = _.sortBy(equalKeys);
 
   const result = sortedKeys.map((key) => {
