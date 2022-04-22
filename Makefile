@@ -6,7 +6,7 @@ publish:
 	npm publish --dry-run
 lint:
 	npx eslint .
-test:
+test-coverage:
 	npx jest --coverage
 test-watch:
 	npx jest --watch
