@@ -1,10 +1,9 @@
 import yaml from 'js-yaml';
 
-const parse = (data, format) => {
-  if (format === 'json') {
-    return JSON.parse(data);
-  }
-  return yaml.load(data);
+const mapping = {
+  json: JSON.parse,
+  yaml: yaml.load,
+  yml: yaml.load,
 };
 
-export default parse;
+export default (data, format) => mapping[format](data);
