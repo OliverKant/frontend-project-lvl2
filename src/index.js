@@ -13,7 +13,7 @@ const getParsedData = (files) => {
   return parse(data, format);
 };
 
-const generateDiff = (fileName1, fileName2, format) => {
+const generateDiff = (fileName1, fileName2, format = 'stylish') => {
   const parse1 = getParsedData(fileName1);
   const parse2 = getParsedData(fileName2);
 
