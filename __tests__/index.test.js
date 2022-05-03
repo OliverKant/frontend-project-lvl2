@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const getFixturesPath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
 
-describe.each(['stylish', 'plain'])('Test format', (format) => {
+describe.each(['stylish', 'plain', 'json'])('Test format', (format) => {
   const data = path.join(__dirname, '..', '__fixtures__', `${format}Diff.txt`);
   const expected = readFileSync(data, { encoding: 'utf-8' });
 
